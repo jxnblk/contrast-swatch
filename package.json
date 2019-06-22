@@ -14,8 +14,8 @@
   },
   "dependencies": {
     "color": "^3.1.2",
-    "jimp": "^0.6.4",
     "micro": "^9.3.4",
-    "pngjs": "^3.4.0"
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
   }
 }

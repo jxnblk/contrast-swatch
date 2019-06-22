@@ -1,5 +1,5 @@
 const parse = require('./lib/parse-url')
-const image = require('./lib/image')
+const svg = require('./lib/svg')
 
 module.exports = async (req, res) => {
   switch (req.url) {
@@ -7,11 +7,17 @@ module.exports = async (req, res) => {
       return null
   }
 
-  const png = await image(req)
-  if (!png) return 'todo'
+  const data = svg(req)
+  if (!data) {
+    res.statusCode = 404
+    return 'Not found'
+  }
 
-  console.log(png)
+  switch (data.query.type) {
+    case 'json':
+      return data
+  }
 
-  res.setHeader('Content-Type', 'image/png')
-  return png
+  res.setHeader('Content-Type', 'image/svg+xml;charset=utf-8')
+  return data.svg
 }

@@ -6,6 +6,22 @@
     {
       "src": "index.js",
       "use": "@now/node"
+    },
+    {
+      "src": "docs/package.json",
+      "use": "@now/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/$1",
+      "headers": {
+        "cache-control": "s-maxage=600"
+      }
+    },
+    {
+      "src": "/(.*)", "dest": "docs/public/"
     }
   ]
 }

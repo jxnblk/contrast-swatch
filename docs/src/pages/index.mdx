@@ -1,0 +1,66 @@
+import layout from '../layout'
+
+export default layout
+
+# Contrast Swatch (beta)
+
+https://contrast.now.sh
+
+Image microservice for color contrast information
+
+## Usage
+
+Contrast swatch images can be used in any place an image is rendered.
+
+*HTML*
+
+```html
+<img src="https://contrast.now.sh/fff/07c" alt="color contrast indicator" />
+```
+
+*Markdown*
+
+```md
+![color contrast indicator](https://contrast.now.sh/fff/07c)
+```
+
+You can even wrap the image in a React component (or similar) for generating documentation.
+
+```js
+import React from 'react'
+
+export default ({
+  foreground,
+  background,
+  ...props
+}) =>
+  <img
+    {...props}
+    src={`https://contrast.now.sh/${foreground}/${background}`}
+    alt='color contrast indicator'
+  />
+```
+
+## Options
+
+Options can be passed as URL query strings.
+
+```
+https://contrast.now.sh/ff/07c?width=256&height=96&fontSize=12
+```
+
+Option | Description
+---|---
+`width`     | Width of image in pixels
+`height`    | Height of image in pixels (font size will scale based on height)
+`fontSize`  | Relative font size (default 16)
+`label`     | Show a pass/fail label based on the [WCAG Criteria][wcag]
+`text`      | Render a custom text label
+
+[wcag]: https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html
+
+## Related
+
+- [Colorable](https://colorable.jxnblk.com)
+- [Use Contrast](https://usecontrast.com/)
+
