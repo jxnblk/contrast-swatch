@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "alias": "contrast.now.sh",
+  "public": true,
+  "builds": [
+    {
+      "src": "index.js",
+      "use": "@now/node"
+    }
+  ]
+}

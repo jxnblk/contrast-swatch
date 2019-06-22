@@ -1,0 +1,21 @@
+{
+  "private": true,
+  "name": "contrast-swatch",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "author": "Brent Jackson <jxnblk@gmail.com>",
+  "scripts": {
+    "start": "micro",
+    "dev": "micro-dev"
+  },
+  "devDependencies": {
+    "micro-dev": "^3.0.0"
+  },
+  "dependencies": {
+    "color": "^3.1.2",
+    "jimp": "^0.6.4",
+    "micro": "^9.3.4",
+    "pngjs": "^3.4.0"
+  }
+}
