@@ -154,7 +154,6 @@ module.exports = async (req, res) => {
   }
 
   res.setHeader('Content-Type', 'image/svg+xml;charset=utf-8')
-  // res.setHeader('Cache-Control', 'public, max-age=86400')
-  res.setHeader('Cache-Control', 'public, max-age=60')
+  res.setHeader('Cache-Control', 'public, max-age=86400')
   return data.svg
 }
