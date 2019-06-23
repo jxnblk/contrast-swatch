@@ -2,14 +2,14 @@
   "private": true,
   "name": "contrast-swatch",
   "version": "1.0.0",
-  "main": "server.js",
   "license": "MIT",
   "author": "Brent Jackson <jxnblk@gmail.com>",
   "scripts": {
     "prepare": "gatsby build",
-    "start": "micro",
-    "landing": "gatsby develop",
-    "dev": "micro-dev"
+    "dev": "gatsby develop",
+    "build": "gatsby build",
+    "start": "micro server/index.js",
+    "micro": "micro-dev server/index.js"
   },
   "dependencies": {
     "color": "^3.1.2",

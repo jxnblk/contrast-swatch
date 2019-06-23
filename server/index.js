@@ -74,18 +74,19 @@ const svg = req => {
 
   const opts = Object.assign({
     width: 128,
-    height: 96,
-    fontSize: 16,
+    height: 128,
+    font: 'system-ui,sans-serif',
+    fontSize: 1,
     // todo
     contrast: true,
     label: false,
   }, data.query)
 
-  const { width, height } = opts
-  const ratio = height / width
-  const xheight = 32 * ratio
-  const fontSize = opts.fontSize * ratio * .5
-  const baseline = 16 * ratio + (opts.fontSize / 8 * ratio)
+  const width = opts.size || opts.width
+  const height = opts.size || opts.height
+  const xwidth = 32 * (width / height)
+  const fontSize = opts.fontSize * 8
+  const baseline = 16 + (fontSize / 3.125)
 
   let text = []
   if (opts.contrast) {
@@ -100,22 +101,22 @@ const svg = req => {
     xmlns: 'http://www.w3.org/2000/svg',
     width,
     height,
-    viewBox: `0 0 32 ${xheight}`,
+    viewBox: `0 0 ${xwidth} 32`,
     fill: colors.hex.foreground,
     style: {
-      fontFamily: 'system-ui, sans-serif',
+      fontFamily: opts.font,
       fontWeight: 'bold',
       fontSize,
     },
   },
     h('rect', {
-      width: 32,
-      height: xheight,
+      width: xwidth,
+      height: 32,
       fill: colors.hex.background,
     }),
     h('text', {
       textAnchor: 'middle',
-      x: 16,
+      x: xwidth / 2,
       y: baseline,
     },
       text.join(' ')
@@ -153,5 +154,7 @@ module.exports = async (req, res) => {
   }
 
   res.setHeader('Content-Type', 'image/svg+xml;charset=utf-8')
+  // res.setHeader('Cache-Control', 'public, max-age=86400')
+  res.setHeader('Cache-Control', 'public, max-age=60')
   return data.svg
 }

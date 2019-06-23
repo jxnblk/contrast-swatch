@@ -12,6 +12,24 @@ export default {
     td: {
       ...base.styles.td,
       borderWidth: 1,
-    }
+      borderColor: 'muted',
+    },
+    code: {
+      fontFamily: 'monospace',
+      fontSize: '87.5%',
+      color: 'secondary',
+      bg: 'muted',
+    },
+    pre: {
+      p: 3,
+      fontFamily: 'monospace',
+      color: 'secondary',
+      bg: 'muted',
+    },
+    inlineCode: {
+      fontFamily: 'monospace',
+      color: 'secondary',
+      bg: 'muted',
+    },
   }
 }
