@@ -35,6 +35,7 @@
     "gatsby-plugin-mdx": "^1.0.5",
     "gatsby-theme-ui": "^0.1.7",
     "micro-dev": "^3.0.0",
+    "primer-colors": "^1.0.1",
     "theme-ui": "^0.1.7"
   }
 }

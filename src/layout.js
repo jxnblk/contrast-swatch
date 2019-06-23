@@ -11,6 +11,22 @@ import {
 import { Helmet } from 'react-helmet'
 import pkg from '../package.json'
 
+const NavLink = props =>
+  <Styled.a
+    {...props}
+    css={{
+      display: 'inline-block',
+      mr: 3,
+      fontSize: 1,
+      fontWeight: 'bold',
+      color: 'inherit',
+      textDecoration: 'none',
+      ':hover': {
+        textDecoration: 'underline',
+      }
+    }}
+  />
+
 export default props =>
   <Styled.root>
     <Helmet>
@@ -30,12 +46,14 @@ export default props =>
         </Container>
       </Main>
       <Footer>
-        <Styled.a href='https://github.com/jxnblk/contrast-swatch'>
-          GitHub
-        </Styled.a>
-        <Styled.a href='https://jxnblk.com'>
-          Made by Jxnblk
-        </Styled.a>
+        <Container>
+          <NavLink href='https://github.com/jxnblk/contrast-swatch'>
+            GitHub
+          </NavLink>
+          <NavLink href='https://jxnblk.com'>
+            Made by Jxnblk
+          </NavLink>
+        </Container>
       </Footer>
     </Layout>
   </Styled.root>
