@@ -5,7 +5,7 @@ const qs = require('querystring')
 const url = require('url')
 const Color = require('color')
 const { createElement: h } = require('react')
-const { renderToString } = require('react-dom/server')
+const { renderToStaticMarkup } = require('react-dom/server')
 const staticHandler = require('serve-handler')
 
 const parseURL = (req) => {
@@ -123,7 +123,7 @@ const svg = req => {
     )
   )
 
-  const svg = renderToString(el)
+  const svg = renderToStaticMarkup(el)
 
   return {
     ...data,
