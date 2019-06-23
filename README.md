@@ -97,6 +97,7 @@ https://contrast.now.sh/fff/40f?width=256&height=96&fontSize=1.25
 **Custom Text**
 
 [![][text]][text]
+
 [text]: https://contrast.now.sh/cff/40f?width=256&text=Aa
 
 ## Options

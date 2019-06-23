@@ -1,6 +1,7 @@
 {
   "private": true,
   "name": "contrast-swatch",
+  "description": "Image microservice for color contrast information",
   "version": "1.0.0",
   "license": "MIT",
   "author": "Brent Jackson <jxnblk@gmail.com>",
