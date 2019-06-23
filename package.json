@@ -1,6 +1,7 @@
 {
   "private": true,
   "name": "contrast-swatch",
+  "description": "Image microservice for color contrast information",
   "version": "1.0.0",
   "license": "MIT",
   "author": "Brent Jackson <jxnblk@gmail.com>",
@@ -35,6 +36,7 @@
     "gatsby-plugin-mdx": "^1.0.5",
     "gatsby-theme-ui": "^0.1.7",
     "micro-dev": "^3.0.0",
+    "primer-colors": "^1.0.1",
     "theme-ui": "^0.1.7"
   }
 }

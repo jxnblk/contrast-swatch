@@ -25,11 +25,16 @@ export default {
       fontFamily: 'monospace',
       color: 'secondary',
       bg: 'muted',
+      overflowX: 'auto',
     },
     inlineCode: {
       fontFamily: 'monospace',
       color: 'secondary',
       bg: 'muted',
+    },
+    img: {
+      maxWidth: '100%',
+      height: 'auto',
     },
   }
 }
