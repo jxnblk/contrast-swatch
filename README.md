@@ -111,6 +111,14 @@ Option | Description
 `label`     | Show a pass/fail label based on the [WCAG Criteria][wcag]
 `text`      | Render any custom text
 
+## Metadata
+
+A JSON response with color contrast information can be fetched by adding the `type=json` query to the URL.
+
+```
+https://contrast.now.sh/cff/40f?type=json
+```
+
 [wcag]: https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html
 
 ## Related
