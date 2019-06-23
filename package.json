@@ -2,20 +2,33 @@
   "private": true,
   "name": "contrast-swatch",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
   "license": "MIT",
   "author": "Brent Jackson <jxnblk@gmail.com>",
   "scripts": {
+    "prepare": "gatsby build",
     "start": "micro",
+    "landing": "gatsby develop",
     "dev": "micro-dev"
-  },
-  "devDependencies": {
-    "micro-dev": "^3.0.0"
   },
   "dependencies": {
     "color": "^3.1.2",
     "micro": "^9.3.4",
+    "now-micro": "^0.4.0",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "serve-handler": "^6.0.2"
+  },
+  "devDependencies": {
+    "@emotion/core": "^10.0.10",
+    "@emotion/styled": "^10.0.12",
+    "@mdx-js/mdx": "^1.0.21",
+    "@mdx-js/react": "^1.0.21",
+    "@theme-ui/presets": "^0.1.7",
+    "gatsby": "^2.10.0",
+    "gatsby-plugin-mdx": "^1.0.5",
+    "gatsby-theme-ui": "^0.1.7",
+    "micro-dev": "^3.0.0",
+    "theme-ui": "^0.1.7"
   }
 }
