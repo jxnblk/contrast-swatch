@@ -7,8 +7,6 @@
 
 Image microservice for color contrast information
 
-https://contrast.now.sh
-
 [![][a]][a]
 [![][b]][b]
 [![][c]][c]
@@ -22,7 +20,9 @@ https://contrast.now.sh
 Contrast swatch images can be used in any place an image is rendered.
 The URL accepts a foreground and background color.
 
-<https://contrast.now.sh/fff/33e>
+[`https://contrast.now.sh/cff/40f`][example]
+
+[example]: https://contrast.now.sh/cff/40f
 
 **HTML**
 
@@ -120,6 +120,8 @@ A JSON response with color contrast information can be fetched by adding the `ty
 ```
 https://contrast.now.sh/cff/40f?type=json
 ```
+
+**Note:** the returned JSON schema might change in a future version
 
 [wcag]: https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html
 

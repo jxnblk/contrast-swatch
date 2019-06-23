@@ -4,15 +4,14 @@
   "public": true,
   "builds": [
     {
-      "src": "package.json",
-      "use": "@now/static-build",
-      "config": {
-        "distDir": "public"
-      }
-    },
-    {
-      "src": "server/index.js",
+      "src": "img/index.js",
       "use": "now-micro"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/img/$1"
     }
   ]
 }

@@ -1,12 +1,9 @@
-// all the source code is in a single module
-// because who the fuck even knows how zeit now is supposed to work
-
 const qs = require('querystring')
 const url = require('url')
 const Color = require('color')
 const { createElement: h } = require('react')
 const { renderToStaticMarkup } = require('react-dom/server')
-const staticHandler = require('serve-handler')
+const redirect = require('micro-redirect')
 
 const parseURL = (req) => {
   const data = url.parse(req.url)
@@ -89,7 +86,7 @@ const svg = req => {
   const baseline = 16 + (fontSize / 3.125)
 
   let text = []
-  if (opts.contrast) {
+  if (opts.contrast !== 0) {
     text.push(round(colors.contrast))
   }
   if (opts.label) {
@@ -133,18 +130,10 @@ const svg = req => {
 }
 
 module.exports = async (req, res) => {
-  staticHandler(req, res, {
-    public: 'public',
-  })
-  switch (req.url) {
-    case '/favicon.ico':
-      return 'favicon'
-  }
-
   const data = svg(req)
 
   if (!data) {
-    res.statusCode = 404
+    redirect(res, 302, 'https://github.com/jxnblk/contrast-swatch')
     return
   }
 
