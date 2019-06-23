@@ -8,6 +8,7 @@
     "prepare": "gatsby build",
     "dev": "gatsby develop",
     "build": "gatsby build",
+    "now-build": "gatsby build",
     "start": "micro server/index.js",
     "micro": "micro-dev server/index.js",
     "icon": "capture-website 'https://contrast.now.sh/cff/40f?size=16&text=A&fontSize=3' --width=768 --height=512 --overwrite static/favicon.png",

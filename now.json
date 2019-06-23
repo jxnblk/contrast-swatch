@@ -1,5 +1,18 @@
 {
-  "version": 1,
+  "version": 2,
   "alias": "contrast.now.sh",
-  "public": true
+  "public": true,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@now/static-build",
+      "config": {
+        "distDir": "public"
+      }
+    },
+    {
+      "src": "server/index.js",
+      "use": "now-micro"
+    }
+  ]
 }
