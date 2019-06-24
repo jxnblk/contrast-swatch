@@ -4,14 +4,25 @@
   "public": true,
   "builds": [
     {
+      "src": "www/package.json",
+      "use": "@now/static-build",
+      "config": {
+        "distDir": "public"
+      }
+    },
+    {
       "src": "img/index.js",
-      "use": "now-micro"
+      "use": "@now/node"
     }
   ],
   "routes": [
     {
+      "src": "/img/(?<foreground>[^/]+)/(?<background>[^/]+)",
+      "dest": "/img/index.js?foreground=$foreground&background=$background"
+    },
+    {
       "src": "/(.*)",
-      "dest": "/img/$1"
+      "dest": "/www/$1"
     }
   ]
 }
