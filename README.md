@@ -112,8 +112,8 @@ https://contrast.now.sh/fff/40f?width=256&height=96&fontSize=1.25
 [![][rounded]][rounded]
 [![][circle]][circle]
 
-[rounded]: https://contrast.now.sh/cff/40f?width=256&radius=4
-[circle]: https://contrast.now.sh/cff/40f?width=256&radius=32
+[rounded]: https://contrast.now.sh/cff/40f?radius=4
+[circle]: https://contrast.now.sh/cff/40f?radius=32
 
 ## Options
 
