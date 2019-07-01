@@ -4,14 +4,21 @@
   "public": true,
   "builds": [
     {
-      "src": "img/index.js",
-      "use": "now-micro"
+      "src": "index.js",
+      "use": "@now/node"
     }
   ],
   "routes": [
     {
-      "src": "/(.*)",
-      "dest": "/img/$1"
+      "src": "/(?<fg>[^/]+)/(?<bg>[^/]+)",
+      "dest": "/index.js?foreground=$fg&background=$bg"
+    },
+    {
+      "src": "/",
+      "status": 302,
+      "headers": {
+        "Location": "https://github.com/jxnblk/contrast-swatch"
+      }
     }
   ]
 }

@@ -101,6 +101,20 @@ https://contrast.now.sh/fff/40f?width=256&height=96&fontSize=1.25
 
 [text]: https://contrast.now.sh/cff/40f?width=256&text=Aa
 
+**Font Weight**
+
+[![][weight]][weight]
+
+[weight]: https://contrast.now.sh/cff/40f?width=256&fontWeight=900
+
+**Radius**
+
+[![][rounded]][rounded]
+[![][circle]][circle]
+
+[rounded]: https://contrast.now.sh/cff/40f?radius=4
+[circle]: https://contrast.now.sh/cff/40f?radius=32
+
 ## Options
 
 
@@ -110,7 +124,10 @@ Option | Description
 `width`     | Width of image in pixels
 `height`    | Height of image in pixels (font size will scale based on height)
 `fontSize`  | Relative font size (default 1)
+`fontWeight`| Font weight (default 1)
 `label`     | Show a pass/fail label based on the [WCAG Criteria][wcag]
+`radius`    | Border radius
+`baseline`   | Shift text baseline down
 `text`      | Render any custom text
 
 ## Metadata

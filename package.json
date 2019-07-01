@@ -1,7 +1,14 @@
 {
   "private": true,
-  "workspaces": [
-    "www",
-    "img"
-  ]
+  "name": "server",
+  "version": "0.0.1",
+  "main": "index.js",
+  "scripts": {
+    "dev": "now dev"
+  },
+  "dependencies": {
+    "color": "^3.1.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  }
 }
