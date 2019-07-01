@@ -105,15 +105,15 @@ https://contrast.now.sh/fff/40f?width=256&height=96&fontSize=1.25
 
 [![][weight]][weight]
 
-[weight]: https://contrast.now.sh/cff/40f?width=256&fontWeight=900
+[weight]: https://contrast.now.sh/cff/40f?fontWeight=900&width=256
 
 **Radius**
 
 [![][rounded]][rounded]
 [![][circle]][circle]
 
-[rounded]: https://contrast.now.sh/cff/40f?radius=4
-[circle]: https://contrast.now.sh/cff/40f?radius=32
+[rounded]: https://contrast.now.sh/cff/40f?radius=8
+[circle]: https://contrast.now.sh/cff/40f?radius=48
 
 ## Options
 
