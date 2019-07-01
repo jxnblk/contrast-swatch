@@ -4,14 +4,8 @@
   "public": true,
   "builds": [
     {
-      "src": "img/index.js",
+      "src": "index.js",
       "use": "now-micro"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/img/$1"
     }
   ]
 }

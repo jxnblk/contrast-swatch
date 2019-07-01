@@ -110,7 +110,10 @@ Option | Description
 `width`     | Width of image in pixels
 `height`    | Height of image in pixels (font size will scale based on height)
 `fontSize`  | Relative font size (default 1)
+`fontWeight`| Font weight (default 1)
 `label`     | Show a pass/fail label based on the [WCAG Criteria][wcag]
+`radius`    | Border radius
+`basline`   | Shift text baseline down
 `text`      | Render any custom text
 
 ## Metadata

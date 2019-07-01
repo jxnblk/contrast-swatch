@@ -5,6 +5,8 @@ const { createElement: h } = require('react')
 const { renderToStaticMarkup } = require('react-dom/server')
 const redirect = require('micro-redirect')
 
+const homepage = 'https://github.com/jxnblk/contrast-swatch'
+
 const parseURL = (req) => {
   const data = url.parse(req.url)
   const [ , a, b ] = data.pathname.split('/')
@@ -74,22 +76,19 @@ const svg = req => {
     height: 128,
     font: 'system-ui,sans-serif',
     fontSize: 1,
-    // todo
-    contrast: true,
+    fontWeight: 700,
+    baseline: 0,
     label: false,
+    radius: 0,
   }, data.query)
 
-  const width = opts.size || opts.width
-  const height = opts.size || opts.height
+  const width = Number(opts.size || opts.width)
+  const height = Number(opts.size || opts.height)
   const xwidth = 32 * (width / height)
-  const fontSize = opts.fontSize * 8
-  const baseline = 16 + (fontSize / 3.125)
+  const fontSize = Number(opts.fontSize) * 8
 
-  let text = []
-  if (opts.contrast !== 0) {
-    text.push(round(colors.contrast))
-  }
-  if (opts.label) {
+  let text = [ round(colors.contrast) ]
+  if (Boolean(opts.label)) {
     text.push(colors.label)
   }
   if (opts.text) text = [opts.text]
@@ -102,7 +101,7 @@ const svg = req => {
     fill: colors.hex.foreground,
     style: {
       fontFamily: opts.font,
-      fontWeight: 'bold',
+      fontWeight: opts.fontWeight,
       fontSize,
     },
   },
@@ -110,11 +109,13 @@ const svg = req => {
       width: xwidth,
       height: 32,
       fill: colors.hex.background,
+      rx: opts.radius,
     }),
     h('text', {
       textAnchor: 'middle',
       x: xwidth / 2,
-      y: baseline,
+      y: 16 + Number(opts.baseline),
+      dominantBaseline: 'middle',
     },
       text.join(' ')
     )
@@ -133,7 +134,7 @@ module.exports = async (req, res) => {
   const data = svg(req)
 
   if (!data) {
-    redirect(res, 302, 'https://github.com/jxnblk/contrast-swatch')
+    redirect(res, 302, homepage)
     return
   }
 
