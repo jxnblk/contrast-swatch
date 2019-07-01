@@ -1,20 +1,13 @@
-const qs = require('querystring')
-const url = require('url')
 const Color = require('color')
 const { createElement: h } = require('react')
 const { renderToStaticMarkup } = require('react-dom/server')
-const redirect = require('micro-redirect')
 
 const homepage = 'https://github.com/jxnblk/contrast-swatch'
 
 const parseURL = (req) => {
-  const data = url.parse(req.url)
-  const [ , a, b ] = data.pathname.split('/')
-  const query = qs.parse(data.query)
-  const foreground = decodeURIComponent(a)
-  const background = decodeURIComponent(b)
+  const { foreground, background, ...query } = req.query
 
-  if (!b || !a) return null
+  if (!foreground || !background) return null
 
   return {
     foreground,
@@ -133,17 +126,14 @@ const svg = req => {
 module.exports = async (req, res) => {
   const data = svg(req)
 
-  if (!data) {
-    redirect(res, 302, homepage)
-    return
-  }
+  if (!data) return
 
   switch (data.query.type) {
     case 'json':
-      return data
+      return res.send(data)
   }
 
   res.setHeader('Content-Type', 'image/svg+xml;charset=utf-8')
   res.setHeader('Cache-Control', 'public, max-age=86400')
-  return data.svg
+  res.send(data.svg)
 }

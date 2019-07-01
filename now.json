@@ -5,7 +5,20 @@
   "builds": [
     {
       "src": "index.js",
-      "use": "now-micro"
+      "use": "@now/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(?<fg>[^/]+)/(?<bg>[^/]+)",
+      "dest": "/index.js?foreground=$fg&background=$bg"
+    },
+    {
+      "src": "/",
+      "status": 302,
+      "headers": {
+        "Location": "https://github.com/jxnblk/contrast-swatch"
+      }
     }
   ]
 }
