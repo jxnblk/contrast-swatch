@@ -27,13 +27,13 @@ The URL accepts a foreground and background color.
 **HTML**
 
 ```html
-<img src="https://contrast.now.sh/fff/07c" alt="color contrast indicator" />
+<img src="https://contrast.now.sh/cff/07c" alt="color contrast indicator" />
 ```
 
 **Markdown**
 
 ```md
-![color contrast indicator](https://contrast.now.sh/fff/07c)
+![color contrast indicator](https://contrast.now.sh/cff/07c)
 ```
 
 ## React
@@ -60,19 +60,19 @@ export default ({
 Compare two `rgb` values, or an `rgb` and a hex value:
 
 ```
-https://contrast.now.sh/rgb(255,255,255)/40f
+https://contrast.now.sh/rgb(204,255,255)/40f
 ```
 
 [![][rgb]][rgb]
 
-[rgb]: https://contrast.now.sh/rgb(255,255,255)/40f
+[rgb]: https://contrast.now.sh/rgb(204,255,255)/40f
 
 ## Customization
 
 Use URL queries to customize the styles.
 
 ```
-https://contrast.now.sh/fff/40f?width=256&height=96&fontSize=1.25
+https://contrast.now.sh/cff/40f?width=256&height=96&fontSize=1.25
 ```
 
 **Pass/Fail Label**
