@@ -55,6 +55,18 @@ export default ({
   />
 ```
 
+## RGB
+
+Compare two `rgb` values, or an `rgb` and a hex value:
+
+```
+https://contrast.now.sh/rgb(255,255,255)/40f
+```
+
+[![][rgb]][rgb]
+
+[rgb]: https://contrast.now.sh/rgb(255,255,255)/40f
+
 ## Customization
 
 Use URL queries to customize the styles.
