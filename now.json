@@ -10,14 +10,18 @@
   ],
   "routes": [
     {
-      "src": "/(?<fg>[^/]+)/(?<bg>[^/]+)",
-      "dest": "/index.js?foreground=$fg&background=$bg"
-    },
-    {
       "src": "/",
       "status": 302,
       "headers": {
         "Location": "https://github.com/jxnblk/contrast-swatch"
+      },
+      "continue": true
+    },
+    {
+      "src": "/(?<fg>[^/]+)/(?<bg>[^/]+)",
+      "dest": "/index.js?foreground=$fg&background=$bg",
+      "headers": {
+        "Cache-Control": "max-age=604800"
       }
     }
   ]
